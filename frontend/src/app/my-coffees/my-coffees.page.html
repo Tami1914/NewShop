@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>myCoffees</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let c of coffees">
+    <ion-label>
+      <h1>{{c.country}}</h1>
+      <p>{{c.flavor}}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>
