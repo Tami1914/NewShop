@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Coffee Shop
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,14 +9,16 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Coffee Shop</ion-title>
+      <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div>
-    <h1 class="country">Country: {{country}}</h1>
-    <p>Flavor: {{flavor}}</p>
+    <h1 class="tittle">Welcome to CoffeeWeb</h1>
+    <p class="p">Refill your stomach with our delicious coffees</p>
   </div>
 
-  <ion-button expand="block" (click)="gotoMyCoffees()">Show Coffees</ion-button>
+  <div class="buttonContainer">
+    <ion-button expand="block" (click)="gotoMyCoffees()" class="showButton">Show Coffees</ion-button>
+  </div>
 </ion-content>

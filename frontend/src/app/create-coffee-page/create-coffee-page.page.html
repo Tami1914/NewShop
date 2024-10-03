@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>createCoffeePage</ion-title>
+    <ion-title>Add your coffee</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,10 +11,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <form [formGroup]="coffeeForm" (ngSubmit)="createCoffee()">
+  <form [formGroup]="coffeeForm" (ngSubmit)="createCoffee()" class="formContainer">
     <ion-item>
       <ion-label position="floating">Country</ion-label>
-      <ion-input formControlName="country"></ion-input>
+      <ion-input formControlName="country" class="inputContainer"></ion-input>
     </ion-item>
     <ion-note color="danger" *ngIf="getFormControl('country')?.hasError('required') && getFormControl('country')?.touched">
       El pais es obligatorio.
@@ -22,12 +22,12 @@
 
     <ion-item>
       <ion-label position="floating">Flavor</ion-label>
-      <ion-input formControlName="flavor"></ion-input>
+      <ion-input formControlName="flavor" class="inputContainer"></ion-input>
     </ion-item>
     <ion-note color="danger" *ngIf="getFormControl('flavor')?.hasError('required') && getFormControl('flavor')?.touched">
       El sabor es obligatorio.
     </ion-note>
 
-    <ion-button expand="full" type="submit" [disabled]="!coffeeForm.valid">Crear</ion-button>
+    <ion-button expand="full" type="submit" [disabled]="!coffeeForm.valid" color="success" shape="round">Create</ion-button>
   </form>
 </ion-content>

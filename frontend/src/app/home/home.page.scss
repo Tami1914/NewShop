@@ -26,6 +26,24 @@
   text-decoration: none;
 }
 
-.country {
+.tittle {
+  display: flex;
   color: red;
+  background-color: #1e1e1e;
+  padding: 0.5em;
+  justify-content: center;
+}
+
+.p{
+  padding-left: 1em;
+}
+
+.buttonContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.showButton{
+  width: 30%;
 }

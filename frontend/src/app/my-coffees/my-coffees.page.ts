@@ -17,15 +17,19 @@ export class MyCoffeesPage implements OnInit {
     this.getAllCoffees();
   }
 
-  getAllCoffees(){
+  getAllCoffees() {
     this.coffeeService.getCoffees().subscribe(response => {
       this.coffees = response;
     });
   }
 
-  deleteCoffee(id: any){
+  deleteCoffee(id: any) {
     this.coffeeService.delete(id).subscribe(response => {
       this.getAllCoffees();
     })
+  }
+
+  gotoMyCreateCoffee(){
+    this.router.navigateByUrl("/create-coffee-page");
   }
 }

@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>myCoffees</ion-title>
+    <ion-title>My Coffees</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,7 +9,12 @@
     <ion-label>
       <h1>{{c.country}}</h1>
       <p>{{c.flavor}}</p>
-      <ion-button (click)="deleteCoffee(c.id)">borrar</ion-button>
     </ion-label>
+    <ion-button>Edit</ion-button>
+    <ion-button (click)="deleteCoffee(c.id)" class="deleteButton" color="danger">Delete</ion-button>
   </ion-item>
+
+  <ion-button (click)="gotoMyCreateCoffee()" class="addButton">Add your coffee</ion-button>
+  
 </ion-content>
+
