@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -10,7 +10,23 @@ export class CoffeeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCoffees(){
+  getCoffees() {
     return this.httpClient.get(this.endpoint);
+  }
+
+  create(coffee: any) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+    const body = new URLSearchParams();
+    body.append("country", coffee.country);
+    body.append("flavor", coffee.flavor);
+
+    return this.httpClient.post(this.endpoint, body.toString(), { headers });
+  }
+
+  delete(id: any){
+    return this.httpClient.delete(`${this.endpoint}/${id}`);
   }
 }
