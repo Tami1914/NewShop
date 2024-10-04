@@ -14,10 +14,11 @@ const routes: Routes = [
   {
     path: 'my-coffees',
     loadChildren: () => import('./my-coffees/my-coffees.module').then( m => m.MyCoffeesPageModule)
-  },  {
+  },
+  {
     path: 'create-coffee-page',
     loadChildren: () => import('./create-coffee-page/create-coffee-page.module').then( m => m.CreateCoffeePagePageModule)
-  },
+  }
 
 ];
 

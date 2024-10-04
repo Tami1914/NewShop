@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="tertiary">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">createCoffeePage</ion-title>
@@ -12,16 +12,16 @@
   </ion-header>
 
   <form [formGroup]="coffeeForm" (ngSubmit)="createCoffee()" class="formContainer">
-    <ion-item>
-      <ion-label position="floating">Country</ion-label>
+    <ion-item color="medium">
+      <ion-label position="floating" class="l">Country</ion-label>
       <ion-input formControlName="country" class="inputContainer"></ion-input>
     </ion-item>
     <ion-note color="danger" *ngIf="getFormControl('country')?.hasError('required') && getFormControl('country')?.touched">
       El pais es obligatorio.
     </ion-note>
 
-    <ion-item>
-      <ion-label position="floating">Flavor</ion-label>
+    <ion-item color="medium">
+      <ion-label position="floating" class="l">Flavor</ion-label>
       <ion-input formControlName="flavor" class="inputContainer"></ion-input>
     </ion-item>
     <ion-note color="danger" *ngIf="getFormControl('flavor')?.hasError('required') && getFormControl('flavor')?.touched">

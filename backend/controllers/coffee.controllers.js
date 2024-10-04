@@ -55,3 +55,27 @@ exports.delete = (req, res) => {
         console.log("Se borró el cafe");
     });
 };
+
+exports.update = (req, res) => {
+    const id = req.params.id;
+  
+    Coffee.update(req.body, {
+      where: { id: id }
+    })
+      .then(num => {
+        if (num == 1) {
+          res.send({
+            message: "Coffee was updated successfully."
+          });
+        } else {
+          res.send({
+            message: `Cannot update Coffee with id=${id}. Maybe Coffee was not found or req.body is empty!`
+          });
+        }
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: "Error updating Coffee with id=" + id
+        });
+      });
+  };

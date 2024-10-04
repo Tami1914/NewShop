@@ -4,17 +4,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item *ngFor="let c of coffees">
-    <ion-label>
-      <h1>{{c.country}}</h1>
-      <p>{{c.flavor}}</p>
+<ion-content color="tertiary">
+  <ion-item *ngFor="let c of coffees" color="medium">
+    <ion-label class="l">
+      <h1>Country: {{c.country}}</h1>
+      <p>Flavor: {{c.flavor}}</p>
     </ion-label>
     <ion-button>Edit</ion-button>
     <ion-button (click)="deleteCoffee(c.id)" class="deleteButton" color="danger">Delete</ion-button>
   </ion-item>
 
   <ion-button (click)="gotoMyCreateCoffee()" class="addButton">Add your coffee</ion-button>
-  
-</ion-content>
+  <ion-button (click)="goHome()">Go Home</ion-button>
 
+</ion-content>

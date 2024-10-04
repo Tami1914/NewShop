@@ -32,4 +32,8 @@ export class MyCoffeesPage implements OnInit {
   gotoMyCreateCoffee(){
     this.router.navigateByUrl("/create-coffee-page");
   }
+
+  goHome(){
+    this.router.navigateByUrl("/home");
+  }
 }
